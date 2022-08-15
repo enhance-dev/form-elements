@@ -39,7 +39,7 @@ export default function TextInput({ html, state }) {
   <input
     class="p-3 mb-2"
     ${form ? `form="${form}"` : ''}
-    ${id ? `id="${id}"` : ''}
+    ${id ? `id="${id}" name="${id}"` : ''}
     ${max ? `max="${max}"` : ''}
     ${maxlength ? `maxlength="${maxlength}"` : ''}
     ${min ? `min="${min}"` : ''}
