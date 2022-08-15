@@ -57,9 +57,9 @@ export default function TextInput({ html, state }) {
     ${readonly ? 'readonly' : ''}
     ${required ? 'required' : ''}
    >
-   ${errors ? `<p style="color: var(--crimson)">
+   ${errors ? `<div style="color: var(--crimson)">
 ${errors}
-</p>` : ''}
+</div>` : ''}
   ${description ? `<p>
 ${description}
 </p>` : ''}
