@@ -2,6 +2,7 @@ export default function TextInput({ html, state }) {
   const { attrs={} } = state
   const {
     description='',
+    errors='',
     form='',
     id='',
     label='',
@@ -56,6 +57,9 @@ export default function TextInput({ html, state }) {
     ${readonly ? 'readonly' : ''}
     ${required ? 'required' : ''}
    >
+   ${errors ? `<p style="color: var(--crimson)">
+${errors}
+</p>` : ''}
   ${description ? `<p>
 ${description}
 </p>` : ''}
