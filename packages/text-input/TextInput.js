@@ -28,17 +28,30 @@ export default function TextInput({ html, state }) {
   const required = booleanAttr(attrs, 'required')
 
   return html`
+<style>
+  enhance-text-input label input {
+    background-color: var(--light);
+    border-color: var(--grey-300);
+    border-width: 1px;
+    user-select: none;
+  }
+  enhance-text-input label input:focus {
+    outline: none;
+    border-color: var(--grey-700);
+    transition: border-color 0.15s ease-in;
+  }
+</style>
 <label
   for="${name}"
   class="
    radius1
   "
 >
-  <p class="pb-2">
+  <p class="pb-3">
     ${label}
   </p>
   <input
-    class="p-3 mb-2"
+    class="p-2 flex-grow w-full font-light text0 radius1 border-solid mb-2"
     ${form ? `form="${form}"` : ''}
     ${id ? `id="${id}" name="${id}"` : ''}
     ${max ? `max="${max}"` : ''}
