@@ -32,8 +32,6 @@ export default function TextInput({ html, state }) {
   :host label input {
     background-color: var(--light);
     border-color: var(--grey-300);
-    border-width: 1px;
-    user-select: none;
   }
   :host label input:focus {
     outline: none;
@@ -41,21 +39,21 @@ export default function TextInput({ html, state }) {
     transition: border-color 0.15s ease-in;
   }
   :host .errors {
-    color: var(--crimson);
-    border-color: var(--crimson);
+    color: var(--error-500);
+    border-color: var(--error-500);
   }
 </style>
 <label
   for="${name}"
   class="
-   radius1
+   radius0
   "
 >
   <p class="pb-3 ${errors ? 'errors' : ''}">
     ${label}
   </p>
   <input
-    class="p-2 flex-grow w-full font-light text0 radius1 border-solid mb-2 ${errors ? 'errors' : ''}"
+    class="p-2 flex-grow w-full font-light text0 radius0 border-solid mb-2 border1 select-none ${errors ? 'errors' : ''}"
     ${form ? `form="${form}"` : ''}
     ${id ? `id="${id}" name="${id}"` : ''}
     ${max ? `max="${max}"` : ''}
