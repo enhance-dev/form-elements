@@ -40,11 +40,9 @@ export default function TextInput({ html, state }) {
     border-color: var(--grey-700);
     transition: border-color 0.15s ease-in;
   }
-  :host label input.errors {
+  :host .errors {
+    color: var(--crimson);
     border-color: var(--crimson);
-  }
-  :host p.errors {
-    color: var(--crimson)
   }
 </style>
 <label
@@ -53,7 +51,7 @@ export default function TextInput({ html, state }) {
    radius1
   "
 >
-  <p class="pb-3">
+  <p class="pb-3 ${errors ? 'errors' : ''}">
     ${label}
   </p>
   <input
@@ -77,7 +75,7 @@ export default function TextInput({ html, state }) {
     ${required ? 'required' : ''}
    >
    ${errors ? `<p class="mb-3 errors">
-${errors}
+❌ ${errors}
 </p>` : ''}
   ${description ? `<p class="mb-3">
 ${description}
