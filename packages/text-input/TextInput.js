@@ -29,16 +29,22 @@ export default function TextInput({ html, state }) {
 
   return html`
 <style>
-  enhance-text-input label input {
+  :host label input {
     background-color: var(--light);
     border-color: var(--grey-300);
     border-width: 1px;
     user-select: none;
   }
-  enhance-text-input label input:focus {
+  :host label input:focus {
     outline: none;
     border-color: var(--grey-700);
     transition: border-color 0.15s ease-in;
+  }
+  :host label input.errors {
+    border-color: var(--crimson);
+  }
+  :host p.errors {
+    color: var(--crimson)
   }
 </style>
 <label
@@ -51,7 +57,7 @@ export default function TextInput({ html, state }) {
     ${label}
   </p>
   <input
-    class="p-2 flex-grow w-full font-light text0 radius1 border-solid mb-2"
+    class="p-2 flex-grow w-full font-light text0 radius1 border-solid mb-2 ${errors ? 'errors' : ''}"
     ${form ? `form="${form}"` : ''}
     ${id ? `id="${id}" name="${id}"` : ''}
     ${max ? `max="${max}"` : ''}
@@ -70,10 +76,10 @@ export default function TextInput({ html, state }) {
     ${readonly ? 'readonly' : ''}
     ${required ? 'required' : ''}
    >
-   ${errors ? `<div style="color: var(--crimson)">
+   ${errors ? `<p class="mb-3 errors">
 ${errors}
-</div>` : ''}
-  ${description ? `<p>
+</p>` : ''}
+  ${description ? `<p class="mb-3">
 ${description}
 </p>` : ''}
 </label>
