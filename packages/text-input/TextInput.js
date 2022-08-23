@@ -42,16 +42,17 @@ export default function TextInput({ html, state }) {
     color: var(--error-500);
     border-color: var(--error-500);
   }
+  :host p:not(.errors) {
+    color: var(--muted)
+  }
 </style>
 <label
   for="${name}"
-  class="
-   radius0
-  "
+  class="radius0"
 >
-  <p class="pb-3 ${errors ? 'errors' : ''}">
+  <div class="mb-3 ${errors ? 'errors' : ''}">
     ${label}
-  </p>
+  </div>
   <input
     class="p-2 flex-grow w-full font-light text0 radius0 border-solid mb-2 border1 select-none ${errors ? 'errors' : ''}"
     ${form ? `form="${form}"` : ''}
@@ -75,7 +76,7 @@ export default function TextInput({ html, state }) {
    ${errors ? `<p class="mb-3 errors">
 ❌ ${errors}
 </p>` : ''}
-  ${description ? `<p class="mb-3">
+  ${description ? `<p class="mb-2 text-1">
 ${description}
 </p>` : ''}
 </label>
