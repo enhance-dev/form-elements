@@ -8,7 +8,7 @@ export default function FieldSet({ html, state }) {
         border-color: var(--dark)
     }
 </style>
-<fieldset class="radius0 boder-solid border1 pr0 pl0 pt1 pb1">
+<fieldset class="radius0 boder-solid border1 pr0 pl0 pt1 pb1 mb0 mt0">
   <legend class="font-semibold text3 pl-1 pr-1">${legend}</legend>
   <slot></slot>
 </fieldset>
