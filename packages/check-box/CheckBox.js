@@ -28,8 +28,6 @@ export default function CheckBox({ html, state }) {
     const readonly = booleanAttr(attrs, 'readonly')
     const required = booleanAttr(attrs, 'required')
 
-    console.log(typeof value)
-
     return html`
     <style>
       :host label input {
