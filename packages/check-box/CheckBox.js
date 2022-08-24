@@ -28,6 +28,8 @@ export default function CheckBox({ html, state }) {
     const readonly = booleanAttr(attrs, 'readonly')
     const required = booleanAttr(attrs, 'required')
 
+    console.log(typeof value)
+
     return html`
     <style>
       :host label input {
@@ -46,10 +48,7 @@ export default function CheckBox({ html, state }) {
         color: var(--muted)
       }
     </style>
-    <label
-      for="${name}"
-      class="radius0"
-    >
+    <label class="radius0">
       <input
         class="p-2 flex-grow font-light text0 radius0 border-solid mb-2 mr-4 border1 select-none ${errors ? 'errors' : ''}"
         ${form ? `form="${form}"` : ''}
@@ -63,10 +62,10 @@ export default function CheckBox({ html, state }) {
         ${size ? `size="${size}"` : ''}
         ${step ? `step="${step}"` : ''}
         ${type ? `type="${type}"` : ''}
-        ${value ? `value="${value}"` : ''}
+        ${value ? `value="on"` : ''}
         ${autocomplete ? 'autocomplete' : ''}
         ${autofocus ? 'autofocus' : ''}
-        ${checked ? 'checked' : ''}
+        ${checked || value.toString() === 'true' ? 'checked' : ''}
         ${disabled ? 'disabled' : ''}
         ${readonly ? 'readonly' : ''}
         ${required ? 'required' : ''}
