@@ -16,7 +16,6 @@ export default function CheckBox({ html, state }) {
       size='',
       step='',
       value='',
-      type='',
     } = attrs
 
     const booleanAttr = (attrs, attr) => Object.keys(attrs).includes(attr) ? attr : ''
@@ -46,9 +45,10 @@ export default function CheckBox({ html, state }) {
         color: var(--muted)
       }
     </style>
-    <label class="radius0">
+    <label class="radius0 cursor-pointer">
       <input
-        class="p-2 flex-grow font-light text0 radius0 border-solid mb-2 mr-4 border1 select-none ${errors ? 'errors' : ''}"
+        class="p-2 flex-grow radius0 border-solid mbe-2 mie-4 border1 select-none ${errors ? 'errors' : ''}"
+        type='checkbox'
         ${form ? `form="${form}"` : ''}
         ${id ? `id="${id}" name="${id}"` : ''}
         ${max ? `max="${max}"` : ''}
@@ -59,7 +59,6 @@ export default function CheckBox({ html, state }) {
         ${placeholder ? `placeholder="${placeholder}"` : ''}
         ${size ? `size="${size}"` : ''}
         ${step ? `step="${step}"` : ''}
-        ${type ? `type="${type}"` : ''}
         ${value ? `value="on"` : ''}
         ${autocomplete ? 'autocomplete' : ''}
         ${autofocus ? 'autofocus' : ''}
@@ -71,12 +70,8 @@ export default function CheckBox({ html, state }) {
        <span class="mb-2 ${errors ? 'errors' : ''}">
         ${label}
       </span>
-       ${errors ? `<p class="mb-3 errors">
-    ❌ ${errors}
-    </p>` : ''}
-      ${description ? `<p class="mb-2 text-1">
-    ${description}
-    </p>` : ''}
+       ${errors ? `<p class="mbe-3 errors">❌ ${errors}</p>` : ''}
+      ${description ? `<p class="mbe-2 text-1">${description}</p>` : ''}
     </label>
       `
   }

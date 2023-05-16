@@ -47,14 +47,13 @@ export default function TextInput({ html, state }) {
   }
 </style>
 <label
-  for="${name}"
   class="radius0"
 >
-  <div class="mb-3 ${errors ? 'errors' : ''}">
+  <div class="mbe-3 font-semibold ${errors ? 'errors' : ''}">
     ${label}
   </div>
   <input
-    class="p-2 flex-grow w-full font-light text0 radius0 border-solid mb-2 border1 select-none ${errors ? 'errors' : ''}"
+    class="p-2 flex-grow w-full font-light radius0 border-solid mbe-2 border1 select-none ${errors ? 'errors' : ''}"
     ${form ? `form="${form}"` : ''}
     ${id ? `id="${id}" name="${id}"` : ''}
     ${max ? `max="${max}"` : ''}
@@ -73,12 +72,8 @@ export default function TextInput({ html, state }) {
     ${readonly ? 'readonly' : ''}
     ${required ? 'required' : ''}
    >
-   ${errors ? `<p class="mb-3 errors">
-❌ ${errors}
-</p>` : ''}
-  ${description ? `<p class="mb-2 text-1">
-${description}
-</p>` : ''}
+   ${errors ? `<p class="mbe-3 errors">❌ ${errors}</p>` : ''}
+   ${description ? `<p class="mbe-2 text-1">${description}</p>` : ''}
 </label>
   `
 }

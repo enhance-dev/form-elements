@@ -10,6 +10,6 @@ export default function SubmitButton({ html, state }) {
     background-color: var(--primary-400)
   }
 </style>
-<button class="whitespace-no-wrap pb-3 pt-3 pl0 pr0 font-medium text0 cursor-pointer radius0"><slot name="label"></slot></button>
+<button class="whitespace-no-wrap pb-3 pi0 font-semibold cursor-pointer radius0"><slot name="label"></slot></button>
     `
   }
