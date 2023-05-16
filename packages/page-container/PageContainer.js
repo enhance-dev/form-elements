@@ -6,7 +6,7 @@ export default function PageContainer({ html }) {
     background-color: var(--light)
   }
 </style>
-<div class="font-sans p-1">
+<div class="p0">
   <slot></slot>
 </div>
 `
