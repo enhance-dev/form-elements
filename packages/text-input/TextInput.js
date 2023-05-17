@@ -53,7 +53,7 @@ export default function TextInput({ html, state }) {
     ${label}
   </div>
   <input
-    class="p-2 flex-grow w-full font-light radius0 border-solid mbe-2 border1 select-none ${errors ? 'errors' : ''}"
+    class="p-2 flex-grow si-100 font-light radius0 border-solid mbe-2 border1 select-none ${errors ? 'errors' : ''}"
     ${form ? `form="${form}"` : ''}
     ${id ? `id="${id}" name="${id}"` : ''}
     ${max ? `max="${max}"` : ''}
