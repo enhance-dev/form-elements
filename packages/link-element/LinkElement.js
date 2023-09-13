@@ -4,7 +4,7 @@ export default function LinkElement({ html, state }) {
     return html`
 <style>
   :host {
-    color: var(--primary-500);
+    color: var(--fe-primary, var(--primary-500));
   }
   :host a:hover {
     text-decoration: underline;
