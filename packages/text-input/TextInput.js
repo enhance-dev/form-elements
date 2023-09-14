@@ -30,20 +30,20 @@ export default function TextInput({ html, state }) {
   return html`
 <style>
   :host label input {
-    background-color: var(--light);
-    border-color: var(--grey-300);
+    background-color: var(--fe-background, var(--light));
+    border-color: var(--fe-border-color, var(--grey-300));
   }
   :host label input:focus {
     outline: none;
-    border-color: var(--grey-700);
+    border-color: var(--fe-border-color-focus, var(--grey-700));
     transition: border-color 0.15s ease-in;
   }
   :host .errors {
-    color: var(--error-500);
-    border-color: var(--error-500);
+    color: var(--fe-error-color, var(--error-500));
+    border-color: var(--fe-error-color, var(--error-500));
   }
   :host p:not(.errors) {
-    color: var(--muted)
+    color: var(--fe-muted, var(--muted));
   }
 </style>
 <label

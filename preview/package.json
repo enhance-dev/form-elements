@@ -6,12 +6,12 @@
     "lint": "eslint ./app/**/*.mjs --fix"
   },
   "dependencies": {
-    "@enhance/arc-plugin-enhance": "^6.0.1"
+    "@enhance/arc-plugin-enhance": "^6.2.2"
   },
   "devDependencies": {
-    "@enhance/cli": "^0.0.8",
-    "@enhance/types": "^0.6.0",
-    "eslint": "^8.30.0"
+    "@enhance/cli": "^1.0.4",
+    "@enhance/types": "^0.6.1",
+    "eslint": "^8.49.0"
   },
   "eslintConfig": {
     "env": {
