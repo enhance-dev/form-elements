@@ -6,15 +6,7 @@ export default function CheckBox({ html, state }) {
       form='',
       id='',
       label='',
-      max='',
-      maxlength='',
-      min='',
-      minlength='',
       name='',
-      pattern='',
-      placeholder='',
-      size='',
-      step='',
       value='',
     } = attrs
 
@@ -29,36 +21,67 @@ export default function CheckBox({ html, state }) {
 
     return html`
     <style>
-      :host label input {
-        background-color: var(--light);
-        border-color: var(--grey-300);
+      :host label input[type='checkbox'] {
+        appearance: none;
+        -webkit-appearance: none;
+        gap: 0.5rem;
+        margin: 0;
+        display: flex;
+        background: var(--back);
+        color: currentColor;
+        aspect-ratio: 1/1;
+        width: 1rem;
       }
+
+      :host label input[type="checkbox"]::before {
+        content: "";
+        aspect-ratio: 1/1;
+        width: 100%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1rem 1rem var(--accent);
+        background-color: CanvasText;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+      :host label input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+
       :host label input:focus {
-        outline: 1px solid var(--grey-700);
         transition: outline 0.15s ease-in;
       }
+
       :host .errors {
-        color: var(--error-500);
-        border-color: var(--error-500);
-      }
-      :host p:not(.errors) {
-        color: var(--muted)
+        color: var(--error);
+        border-color: var(--error);
       }
     </style>
-    <label class="radius0 cursor-pointer">
+    <label
+      class="
+        leading1
+        flex
+        gap-3
+        align-items-center
+        radius0
+        cursor-pointer
+      "
+    >
       <input
-        class="p-2 flex-grow radius0 border-solid mbe-2 mie-4 border1 select-none ${errors ? 'errors' : ''}"
+        class="
+          border-current
+          border-solid
+          border1
+          select-none
+          text1
+          radius0
+          cursor-pointer
+          ${errors ? 'errors' : ''}
+        "
         type='checkbox'
         ${form ? `form="${form}"` : ''}
-        ${id ? `id="${id}" name="${id}"` : ''}
-        ${max ? `max="${max}"` : ''}
-        ${maxlength ? `maxlength="${maxlength}"` : ''}
-        ${min ? `min="${min}"` : ''}
-        ${minlength ? `minlength="${minlength}"` : ''}
-        ${pattern ? `pattern="${pattern}"` : ''}
-        ${placeholder ? `placeholder="${placeholder}"` : ''}
-        ${size ? `size="${size}"` : ''}
-        ${step ? `step="${step}"` : ''}
+        ${id ? `id="${id}"` : ''}
+        ${name || id ? `name="${name || id}"` : ''}
         ${value ? `value="on"` : ''}
         ${autocomplete ? 'autocomplete' : ''}
         ${autofocus ? 'autofocus' : ''}
@@ -68,10 +91,8 @@ export default function CheckBox({ html, state }) {
         ${required ? 'required' : ''}
        >
        <span class="mb-2 ${errors ? 'errors' : ''}">
-        ${label}
-      </span>
-       ${errors ? `<p class="mbe-3 errors">❌ ${errors}</p>` : ''}
-      ${description ? `<p class="mbe-2 text-1">${description}</p>` : ''}
+         ${label}
+       </span>
     </label>
       `
   }

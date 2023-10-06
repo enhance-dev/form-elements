@@ -30,20 +30,17 @@ export default function TextInput({ html, state }) {
   return html`
 <style>
   :host label input {
-    background-color: var(--light);
-    border-color: var(--grey-300);
+    background-color: var(--back);
+    border-color: var(--fore);
   }
   :host label input:focus {
-    outline: none;
-    border-color: var(--grey-700);
-    transition: border-color 0.15s ease-in;
+    transition: outline 0.15s ease-in;
   }
   :host .errors {
-    color: var(--error-500);
-    border-color: var(--error-500);
+    color: var(--error);
   }
   :host p:not(.errors) {
-    color: var(--muted)
+    color: var(--grey-600)
   }
 </style>
 <label
@@ -55,7 +52,8 @@ export default function TextInput({ html, state }) {
   <input
     class="p-2 flex-grow si-100 font-light radius0 border-solid mbe-2 border1 select-none ${errors ? 'errors' : ''}"
     ${form ? `form="${form}"` : ''}
-    ${id ? `id="${id}" name="${id}"` : ''}
+    ${id ? `id="${id}"` : ''}
+    ${name || id ? `name="${name || id}"` : ''}
     ${max ? `max="${max}"` : ''}
     ${maxlength ? `maxlength="${maxlength}"` : ''}
     ${min ? `min="${min}"` : ''}
@@ -72,7 +70,7 @@ export default function TextInput({ html, state }) {
     ${readonly ? 'readonly' : ''}
     ${required ? 'required' : ''}
    >
-   ${errors ? `<p class="mbe-3 errors">❌ ${errors}</p>` : ''}
+   ${errors ? `<p class="mbe-3 text-1 errors">❌ ${errors}</p>` : ''}
    ${description ? `<p class="mbe-2 text-1">${description}</p>` : ''}
 </label>
   `

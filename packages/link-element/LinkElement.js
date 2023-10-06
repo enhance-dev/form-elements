@@ -4,14 +4,15 @@ export default function LinkElement({ html, state }) {
     return html`
 <style>
   :host {
-    color: var(--primary-500);
+    color: var(--accent);
   }
   :host a:hover {
     text-decoration: underline;
+    text-underline-offset: 4px;
   }
 </style>
 <a href="${href}">
   <slot></slot>
 </div>
 `
-  }
+}
