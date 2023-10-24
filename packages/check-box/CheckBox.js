@@ -53,8 +53,8 @@ export default function CheckBox({ html, state }) {
       }
 
       :host .errors {
-        color: var(--error);
-        border-color: var(--error);
+        color: var(--negative-500);
+        border-color: var(--negative-500);
       }
     </style>
     <label

@@ -1,22 +1,21 @@
-export default function SubmitButton({ html, state }) {
+export default function CreateButton({ html, state }) {
   const { attrs={} } = state
   const booleanAttr = (attrs, attr) => Object.keys(attrs).includes(attr) ? attr : ''
   const disabled = booleanAttr(attrs, 'disabled')
-
-    return html`
+  return html`
 <style>
   :host button {
     color: black;
-    background-color: var(--primary-500)
+    background-color: var(--positive-400)
   }
   :host button:hover {
-    background-color: var(--primary-400)
+    background-color: var(--positive-300)
   }
   :host button:active {
-    background-color: var(--primary-600)
+    background-color: var(--positive-500)
   }
   :host button:disabled {
-    background-color: var(--primary-200)
+    background-color: var(--positive-200)
   }
 </style>
 <button
@@ -32,5 +31,5 @@ export default function SubmitButton({ html, state }) {
 >
   <slot name="label"></slot>
 </button>
-    `
-  }
+  `
+}

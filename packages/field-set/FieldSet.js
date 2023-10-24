@@ -5,7 +5,7 @@ export default function FieldSet({ html, state }) {
     return html`
 <style>
     :host fieldset {
-      border-color: var(--fore)
+      border-color: var(--gray-500)
     }
 </style>
 <fieldset class="radius0 boder-solid border1 pi0 pb1 mb0">

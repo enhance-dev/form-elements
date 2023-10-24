@@ -37,10 +37,10 @@ export default function TextInput({ html, state }) {
     transition: outline 0.15s ease-in;
   }
   :host .errors {
-    color: var(--error);
+    color: var(--negative-500);
   }
   :host p:not(.errors) {
-    color: var(--grey-600)
+    color: var(--fore)
   }
 </style>
 <label
