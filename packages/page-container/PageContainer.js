@@ -2,7 +2,8 @@ export default function PageContainer({ html }) {
     return html`
 <style>
   :host {
-    color: var(--fore);
+    --_fore: var(--fore, currentColor);
+    color: var(--_fore);
     background-color: var(--back)
   }
 </style>

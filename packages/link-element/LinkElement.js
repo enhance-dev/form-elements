@@ -4,7 +4,8 @@ export default function LinkElement({ html, state }) {
     return html`
 <style>
   :host {
-    color: var(--accent);
+    --_accent: var(--accent, royalblue);
+    color: var(--_accent);
   }
   :host a:hover {
     text-decoration: underline;

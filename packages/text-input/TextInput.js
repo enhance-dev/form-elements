@@ -29,18 +29,24 @@ export default function TextInput({ html, state }) {
 
   return html`
 <style>
+  :host {
+    --_accent: var(--accent, royalblue);
+    --_error: var(--error, crimson);
+    --_fore: var(--fore, currentColor);
+    --_back: var(--back, white);
+  }
   :host label input {
-    background-color: var(--back);
-    border-color: var(--fore);
+    background-color: var(--_back);
+    border-color: var(--_fore);
   }
   :host label input:focus {
     transition: outline 0.15s ease-in;
   }
   :host .errors {
-    color: var(--negative-500);
+    color: var(--_error);
   }
   :host p:not(.errors) {
-    color: var(--fore)
+    color: var(--_fore)
   }
 </style>
 <label
@@ -70,7 +76,17 @@ export default function TextInput({ html, state }) {
     ${readonly ? 'readonly' : ''}
     ${required ? 'required' : ''}
    >
-   ${errors ? `<p class="mbe-3 text-1 errors">❌ ${errors}</p>` : ''}
+   ${errors ? `
+  <p
+     class="
+       mbe-3
+       text-1
+       errors
+     "
+  >
+    ❌ ${errors}
+  </p>
+ ` : ''}
    ${description ? `<p class="mbe-2 text-1">${description}</p>` : ''}
 </label>
   `

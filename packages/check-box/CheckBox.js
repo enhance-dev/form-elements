@@ -53,8 +53,8 @@ export default function CheckBox({ html, state }) {
       }
 
       :host .errors {
-        color: var(--negative-500);
-        border-color: var(--negative-500);
+        color: var(--error);
+        border-color: var(--error);
       }
     </style>
     <label
@@ -73,7 +73,6 @@ export default function CheckBox({ html, state }) {
           border-solid
           border1
           select-none
-          text1
           radius0
           cursor-pointer
           ${errors ? 'errors' : ''}

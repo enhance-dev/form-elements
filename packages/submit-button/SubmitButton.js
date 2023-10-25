@@ -2,21 +2,31 @@ export default function SubmitButton({ html, state }) {
   const { attrs={} } = state
   const booleanAttr = (attrs, attr) => Object.keys(attrs).includes(attr) ? attr : ''
   const disabled = booleanAttr(attrs, 'disabled')
+  const cursor = disabled
+    ? 'cursor-not-allowed'
+    : 'cursor-pointer'
 
     return html`
 <style>
-  :host button {
-    color: black;
-    background-color: var(--primary-500)
+  :host {
+    --_accent: var(--accent, royalblue);
+    --_fore: var(--fore, black);
+    --_back: var(--back, white);
   }
-  :host button:hover {
-    background-color: var(--primary-400)
+  :host button {
+    color: var(--_back);
+    background-color: var(--_accent, var(--_fore));
+    border: 1px solid transparent;
   }
   :host button:active {
-    background-color: var(--primary-600)
+    color: var(--_fore);
+    background-color: var(--_accent, var(--_back));
+    border: 1px solid var(--_fore);
   }
   :host button:disabled {
-    background-color: var(--primary-200)
+    color: var(--_accent, var(--_fore));
+    background-color: var(--_fore);
+    border: 1px solid var(--_accent, var(--_back));
   }
 </style>
 <button
@@ -25,8 +35,8 @@ export default function SubmitButton({ html, state }) {
    pb-3
    pi0
    font-semibold
-   ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
    radius0
+   ${cursor}
   "
   ${disabled ? 'disabled' : ''}
 >
