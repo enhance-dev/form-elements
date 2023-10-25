@@ -21,13 +21,20 @@ export default function CheckBox({ html, state }) {
 
     return html`
     <style>
+      :host {
+        --_accent: var(--accent, royalblue);
+        --_error: var(--error, crimson);
+        --_fore: var(--fore, black);
+        --_back: var(--back, white);
+      }
+
       :host label input[type='checkbox'] {
         appearance: none;
         -webkit-appearance: none;
         gap: 0.5rem;
         margin: 0;
         display: flex;
-        background: var(--back);
+        background: var(--_back);
         color: currentColor;
         aspect-ratio: 1/1;
         width: 1rem;
@@ -39,7 +46,7 @@ export default function CheckBox({ html, state }) {
         width: 100%;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
-        box-shadow: inset 1rem 1rem var(--accent);
+        box-shadow: inset 1rem 1rem var(--_accent);
         background-color: CanvasText;
         clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
       }
@@ -53,8 +60,8 @@ export default function CheckBox({ html, state }) {
       }
 
       :host .errors {
-        color: var(--error);
-        border-color: var(--error);
+        color: var(--_error);
+        border-color: var(--_error);
       }
     </style>
     <label
