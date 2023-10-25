@@ -1,21 +1,28 @@
 <page-container>
-  <div class='font-sans'>
-    <field-set legend='Enhance Form Elements'>
-      <div class='grid gap0'>
+  <div class="font-sans">
+    <field-set legend="Enhance Form Elements">
+      <div class="grid gap0">
        <text-input
             type="email"
-            placeholder="enter text"
-            type="email"
-            label='Text Input Label'
-            description='Some help text for this input'
-            ></text-input>
+            placeholder="enter your email"
+            label="Text Input Label"
+            description="Some help text for this input"
+        ></text-input>
+       <text-input
+            type="text"
+            placeholder="placeholder content"
+            label="Username"
+            value="dudebro"
+            description="Demonstrating error state"
+            errors="This user name is taken"
+        ></text-input>
         <check-box
-            label='Checkbox Label'
-            description='Some help text for this checkbox'
+            label="Checkbox Label"
+            description="Some help text for this checkbox"
             ></check-box>
-        <link-element href='example.org'>Hyperlink Me!</link-element>
+        <link-element href="#">Hyperlink Me!</link-element>
         <submit-button>
-          <span slot='label'>Submit</span>
+          <span slot="label">Submit</span>
         </submit-button>
       </div>
     </field-set>
