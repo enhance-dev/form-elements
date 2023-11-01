@@ -1,5 +1,4 @@
 import { getStyles }  from '@enhance/arc-plugin-styles'
-
 const { linkTag } = getStyles
 
 export default function Head () {
@@ -9,8 +8,8 @@ export default function Head () {
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title></title>
-      ${linkTag()}
+      <title>Form elements preview</title>
+      ${ linkTag() }
       <link rel="icon" href="/_public/favicon.svg">
     </head>
 `
